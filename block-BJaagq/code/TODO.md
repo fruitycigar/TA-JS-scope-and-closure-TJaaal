@@ -64,16 +64,16 @@ function main() {
   function inner() {
     var four = 'Four';
 
-    console.log(one); // One
-    console.log(two); // Two
-    console.log(three); // Three
+    console.log(one); // 
+    console.log(two); // 
+    console.log(three); // 
   }
-  console.log(four); // undefined
+  console.log(four); // "Four is not defined."
   inner();
 }
 
 main();
-console.log(one, two, three, four); // One, Two, Three, Four
+console.log(one, two, three, four); // 
 ```
 
 <!-- Put your image below -->
@@ -81,4 +81,5 @@ console.log(one, two, three, four); // One, Two, Three, Four
 ![](/img/q3.heic)
 
 - Create the execution context diagram
-- What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work
+- What will be the value of 1, 2, 3, 4 and 5 or error if the code does not work 
+<!-- error: four is not defined -->
