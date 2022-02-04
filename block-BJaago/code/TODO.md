@@ -26,7 +26,7 @@ var userMessage = sayHelloToUser('Bran');
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](img/q1.HEIC);
 
 2.
 
@@ -43,7 +43,7 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](img/q2.HEIC);
 
 3.
 
@@ -60,13 +60,13 @@ sayHi();
 
 <!-- Put your image below -->
 
-![](./img/image-name.jpg)
+![](img/q3.HEIC);
 
 4.
 
 ```js
-console.log(arr); // output
-console.log(username); // output
+console.log(arr); // undefined
+console.log(username); // undefined
 var usename = 'Sam';
 var arr = [1, 2, 3, 4, 5, 6];
 
@@ -74,3 +74,4 @@ function double(num) {
   return num * 2;
 }
 ```
+![](img/q4.HEIC);
