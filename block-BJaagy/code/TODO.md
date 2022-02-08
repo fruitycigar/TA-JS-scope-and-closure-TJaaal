@@ -72,19 +72,17 @@ function filter (arr, cb) {
   let final = [];
 
   for (let elm of arr) {
-    if(Boolean(cb(elm)) === true) {
-      final.push(cb(elm));
+    if (cb(elm)) {
+      final.push(elm);
     }
   }
+
+  return final;
 }
 
 var numbers = [1, 3, 5, 4, 7, 89, 234, 20];
 let even = filter(numbers, function (n) {
   return n % 2 === 0;
-});
-console.log(even); // [4,234,20]
-let odd = filter(numbers, function (n) {
-  return n % 2 !== 0;
 });
 console.log(odd); // [1,3,5,7,89]
 ```
