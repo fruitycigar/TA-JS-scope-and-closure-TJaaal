@@ -3,20 +3,32 @@
 1. Write a function, `outer` that takes an input `string`. Inside the function `outer` define another function expression named `sayHello` which alerts the `input`. `sayHello` should be call immediately after it is defined.
 
 ```js
-// Your code goes here
+function outer(string) {
+  function sayHello(input) {
+    alert(input);
+  }
+}
+
+sayHello();
 ```
 
 2. Write a function `delay` that accepts two arguments, a callback and the wait for the time in milliseconds (1000 ms is 1 second). `delay` should return a function that, when invoked waits for the specified amount of time before executing. (Use setTimeout)
 
 ```js
-// Your code goes here
+function delay(cb, ms) {
+  return function () {
+    setTimeout(ms);
+  }
+}
 ```
 
 3. Write a function with a closure. The first function should only take one argument, someone's last name, and return the inner function. The returned `inner` function should take one more argument, someone's first name. When inner function when called it should console.log both the first name and the last name with a space.
 
 ```js
-function lastName() {
-  //  Your code goes here
+function lastName (lastname) {
+  function inner (firstname) {
+    console.log(`${firstname} ${lastname}`);
+  }
 }
 
 let lastNameLee = lastName('lee'); // logs nothing
