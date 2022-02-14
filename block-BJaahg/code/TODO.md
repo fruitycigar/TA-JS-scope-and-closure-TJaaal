@@ -10,9 +10,9 @@ const lastName = 'Stark';
 var knownAs = 'no one';
 
 console.log(
-  window.firstName,
-  window.lastName,
-  window.knownAs
+  window.firstName,  // Arya
+  window.lastName, // un
+  window.knownAs // no one
 );
 ```
 
@@ -27,40 +27,49 @@ function fullName(a, b) {
   return a + b;
 }
 
-console.log(window.fullName(firstName, lastName));
+console.log(window.fullName(firstName, lastName)); // AryaStark
 ```
 
 3. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var one = addOne(0);
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); // 1 2
+
+![name](./img/scope-3.png)
+
 ```
 
 4. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
 var one = addOne(0);
-fucntion addOne(num){
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(one, two);
+console.log(one, two); // 1 2
+
+![name](./img/scope-4.png)
+
 ```
 
 5. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-console.log(addOne(0));
-fucntion addOne(num){
+console.log(addOne(0)); // 1
+function addOne(num){
   return num + 1;
 }
 var two = addOne(1);
-console.log(two);
+console.log(two); // 2
+
+![name](./img/scope-5.png)
+
 ```
 
 6. Make a Execution Context Diagram for the following JS and write the output.
@@ -71,18 +80,18 @@ const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); // ?????
 ```
 
 7. Make a Execution Context Diagram for the following JS and write the output.
 
 ```js
-console.log(addOne(0));
+console.log(addOne(0)); // ?????
 const addOne = (num) => {
   return num + 1;
 };
 var two = addOne(1);
-console.log(two);
+console.log(two); // ?????
 ```
 
 8. What will be the output of the following
@@ -95,7 +104,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // undefined
 ```
 
 9. What will be the output of the following
@@ -108,7 +117,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // true 
 ```
 
 10. What will be the output of the following
@@ -121,7 +130,7 @@ function isAwesome() {
   }
   console.log(awesome);
 }
-isAwesome();
+isAwesome(); // undefined
 ```
 
 11. What will be the output of the following
@@ -135,7 +144,7 @@ function fullName(a, b) {
   return a + b;
 }
 const name = fullName(firstName, lastName);
-console.log(name);
+console.log(name); // AryaStark
 ```
 
 12. Guess the output of the code below with a reason.
@@ -146,7 +155,9 @@ function sayHello() {
 }
 sayHello();
 
-console.log(name);
+console.log(name); // undefined
+
+// Let is block-scoped so 'name' is not accessible beyond the function within which it is defined.
 ```
 
 13. Guess the output of the code below with a reason.
@@ -155,7 +166,9 @@ console.log(name);
 if (true) {
   var name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); // Arya Stark
+
+//Var is function scoped, so it's accessible outside the function as well.
 ```
 
 14. Guess the output of the code below with a reason.
@@ -164,7 +177,9 @@ console.log(name);
 if (true) {
   let name = 'Arya Stark';
 }
-console.log(name);
+console.log(name); // reference error
+
+// let is block scoped and doesn't allow for the variable to be accessed outside the function definition.
 ```
 
 15. Guess the output of the code below with a reason.
@@ -173,7 +188,9 @@ console.log(name);
 for (var i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // 20
+
+//Var is function scoped and is accessible outside the function definition as well.
 ```
 
 16. Guess the output of the code below with a reason.
@@ -182,7 +199,9 @@ console.log(i);
 for (let i = 0; i < 20; i++) {
   //
 }
-console.log(i);
+console.log(i); // reference error: i is not defined
+
+// let is block scoped and therefore can't be accessed outside the function.
 ```
 
 17. Guess the output and the reason behind that.
@@ -194,7 +213,9 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); // John Snow
+
+//Var is function scoped and can therefore be accessed outside the immediate function definition.
 ```
 
 18. Guess the output and the reason behind that.
@@ -206,7 +227,9 @@ function sample() {
   }
   console.log(username);
 }
-sample();
+sample(); // reference error
+
+//Let is block scoped so no scene.
 ```
 
 19. Guess the output and the reason behind that.
@@ -220,7 +243,10 @@ function sample() {
   }
   console.log(username, 'second');
 }
-sample();
+sample(); // John Snow
+//           John Snow second
+
+// Var is function scoped, which enables it to be accesible everywhere.
 ```
 
 20. Guess the output and the reason behind that.
@@ -234,7 +260,8 @@ function sample() {
   }
   console.log(username, 'second');
 }
-sample();
+sample(); // John Snow first
+          // Arya Stark second
 ```
 
 21. Guess the output and the reason behind that.
@@ -248,6 +275,11 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+// `Hello I am First`
+// `Hello I am Second`
+// `Hello I am Third`
+
+//Let is block scoped and the console.log function is called within the block, so all is well.
 ```
 
 22. Guess the output and the reason behind that.
@@ -261,6 +293,11 @@ function sample(...args) {
 }
 
 sample('First', 'Second', 'Third');
+// `Hello I am First`
+// `Hello I am Second`
+// `Hello I am Third`
+
+//Const is block scoped and the console.log function is called within the block, so all is well.
 ```
 
 23. Guess the output and the reason behind that.
@@ -272,8 +309,10 @@ if (true) {
   };
   console.log(username, 'First');
   let username = 'Hello World!';
-  myFunc();
+  myFunc(); // reference error
 }
+
+// Let doesn't initialize during the definition phase, hence cannot be accessed before that.
 ```
 
 24. Guess the output and the reason behind that.
@@ -289,7 +328,7 @@ function outer() {
   inner();
 }
 
-outer();
+outer(); // I love this movie called MAD MAX: FURY ROAD.
 ```
 
 25. Guess the output and the reason behind that.
@@ -306,7 +345,7 @@ function outer() {
   inner();
 }
 
-outer();
+outer(); // I love this movie called BEFORE SUNRISE
 ```
 
 26. Guess the output and the reason behind that.
@@ -326,10 +365,10 @@ function outer() {
   }
   inner();
 }
-outer();
+outer(); // I love this movie called GONE GIRL
 ```
 
-30. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
+27. Using reduce find the final value when the initial value passed is `100`. You have to pass the output of one function into the input of next function in the array `allFunctions` starts with `addOne` ends with `half`.
 
 ```js
 const addOne = (num) => {
@@ -353,6 +392,11 @@ let allFunctions = [
   multiplyThree,
   half,
 ];
+
+allFunctions.reduce((acc, cv) => {
+  acc = cv[acc];
+  return acc;
+}, 100)
 
 // Answer is: 447
 ```
