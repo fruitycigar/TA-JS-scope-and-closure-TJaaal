@@ -10,8 +10,12 @@
 **You can use normal for loop for this function**
 
 ```js
-function loop() {
-  // Your code goes here
+function loop(n, tf(), uf(), bd()) {
+  let cv = n;
+  for(let i = n; tf(n); uf(n)){
+    bd(n);
+    cv = i;
+  }
 }
 
 loop(
