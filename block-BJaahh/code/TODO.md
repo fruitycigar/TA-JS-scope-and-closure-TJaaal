@@ -3,7 +3,13 @@
 1. Write a function called `multiplyBy` that takes a `number` as an argument and returns a function. Returned function takes another `number` as an argument and returns the multiplication of both the numbers.
 
 ```js
-// Your code goes here
+function multiplyBy(num) {
+  let product = num;
+  return (num2) => {
+    product *= num2;
+  }
+    return product;
+}
 
 const double = multiplyBy(2);
 const final = double(15); // final should be 30
