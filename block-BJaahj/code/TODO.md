@@ -4,9 +4,9 @@
 
 ```js
 function objOfMatches(array1, array2, callback) {
-  var object = {};
   for(let i = 0; i < array1.length; i++) {
-    if(callback(array1[i]) === array2[i]) {
+    let object = {};
+    if(array2[i] === callback(array1[i])) {
       object.array1[i] = array2[i];
     }
     return object;
