@@ -1,8 +1,8 @@
-1. Write a function that accepts a callback function and return another function. But the function should only be called once.
+1. Write a function that accepts a callback function and return another function. But the function should only be called once.(Why must these questions be so damn difficult?)
 
 ```js
 function once(cb) {
-  // your code goes here
+  return function();
 }
 
 // TEST
